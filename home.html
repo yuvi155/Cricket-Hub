@@ -15,12 +15,10 @@
       scroll-behavior: smooth;
     }
 
-    
     .navbar {
       box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
     }
 
-   
     .banner-image {
       position: relative;
       height: 100vh;
@@ -30,39 +28,38 @@
       overflow: hidden;
     }
 
-    
     .slideshow {
       position: absolute;
       top: 0;
       bottom: 0;
-      width: 50%;
+      width: 55%; 
       z-index: 1;
       overflow: hidden;
     }
 
     .slideshow.left {
-      left: 0;
+      left: -2%;
     }
+
     .slideshow.right {
-      right: 0;
+      right: -2%;
     }
 
     .slideshow img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top;   
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out, object-position 0.5s ease-in-out;
+    }
 
     .slideshow img.active {
       opacity: 1;
+      transform: scale(1.05);
     }
 
-  
     .banner-content {
       position: relative;
       z-index: 5;
@@ -91,14 +88,8 @@
       font-weight: bold;
     }
 
-    /* Player Info Section */
     .info-section {
       padding: 60px 20px;
-    }
-
-    .info-section h4, .info-section h5 {
-      margin: 5px 0;
-      font-weight: 500;
     }
 
     #playerimg {
@@ -130,7 +121,6 @@
       font-size: 22px;
     }
 
-    /* Footer */
     footer {
       background: #212529;
       color: #ddd;
@@ -177,25 +167,36 @@
     </div>
   </nav>
 
-  
   <div class="banner-image">
 
     <!-- Left slideshow -->
     <div class="slideshow left">
-      <img src="./image/steve smith.jpeg" class="active">
-      <img src="./image/virat.jpeg">
+      <img src="./image/steve smith.jpeg">
+      <img src="./image/virat3.jpeg">
       <img src="./image/gill.jpeg">
-      
+      <img src="./image/jimmy ander.jpeg">
+      <img src="./image/jadeja.jpeg">
+      <img src="./image/root.jpeg">
+      <img src="./image/ponting.jpeg">
+      <img src="./image/starc.jpeg">
+      <img src="./image/bumrah.jpeg">
+      <img src="./image/siraj.jpeg">
+      <img src="./image/dhoni2.jpg">
     </div>
 
     <!-- Right slideshow -->
     <div class="slideshow right">
-      <img src="./image/benstokes.jpeg" class="active">
-      <img src="./image/warne.jpeg">
+      <img src="./image/benstokes.jpeg">
       <img src="./image/dhoni.jpg">
+      <img src="./image/virat4.jpeg">
+      <img src="./image/virat.jpeg">
+      <img src="./image/ganguly.jpeg">
+      <img src="./image/rohit.jpeg">
+      <img src="./image/williamson.jpeg">
+      <img src="./image/head.jpeg">
+      <img src="./image/cummins.jpeg">
     </div>
 
-  
     <div class="banner-content">
       <h1>🏏Cricketers Profile</h1>
       <p class="mb-4">Search any cricket player and get detailed information instantly.</p>
@@ -206,32 +207,45 @@
     </div>
   </div>
 
-
   <div class="container text-center info-section">
-    <img src="./image/logo.png" id="playerimg" alt="Player">
-    
-    <h4 id="name"></h4>
-    <h5 id="dob"></h5>
-    <h5 id="birthplace"></h5>
-    <h5 id="bat"></h5>
-    <h5 id="bowl"></h5>
-    <h5 id="height"></h5>
-    <h5 id="team"></h5>
+    <img src="./image/logo.png" id="playerimg" alt="Player" class="mb-4">
 
-    <h5 id="batodirank"></h5>
-    <h5 id="batt20rank"></h5>
-    <h5 id="battestrank"></h5>
-    <h5 id="bowlodirank"></h5>
-    <h5 id="bowlt20rank"></h5>
-    <h5 id="bowltestrank"></h5>
+    <div class="card mb-3 mx-auto" style="max-width:500px;">
+      <div class="card-header bg-warning text-dark"><b>Personal Info</b></div>
+      <div class="card-body text-start">
+        <p id="name"></p>
+        <p id="dob"></p>
+        <p id="birthplace"></p>
+        <p id="bat"></p>
+        <p id="bowl"></p>
+        <p id="height"></p>
+        <p id="team"></p>
+      </div>
+    </div>
 
-    <h5 id="bio"></h5>
+    <div class="card mb-3 mx-auto" style="max-width:500px;">
+      <div class="card-header bg-success text-white"><b>Rankings</b></div>
+      <div class="card-body text-start">
+        <p id="batodirank"></p>
+        <p id="batt20rank"></p>
+        <p id="battestrank"></p>
+        <p id="bowlodirank"></p>
+        <p id="bowlt20rank"></p>
+        <p id="bowltestrank"></p>
+      </div>
+    </div>
 
-    <h3 id="images">Related Images</h3>
+    <div class="card mb-3 mx-auto" style="max-width:500px;">
+      <div class="card-header bg-info text-white"><b>Biography</b></div>
+      <div class="card-body text-start">
+        <p id="bio"></p>
+      </div>
+    </div>
+
+    <h3 id="images" class="mt-4">Related Images</h3>
     <div id="imageResults" class="d-flex flex-wrap justify-content-center"></div>
   </div>
 
-  <!-- Footer -->
   <footer class="text-center">
     © 2025 Cricket-Hub | All Rights Reserved |
     <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=yuvrajpandey155@gmail.com&su=Feedback">
@@ -243,11 +257,26 @@
   <script src="main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
- 
   <script>
-    function startSlideshow(containerSelector, interval=4000) {
-      const slides = document.querySelectorAll(containerSelector + " img");
+    function startRandomSlideshow(containerSelector, interval=4000) {
+      const container = document.querySelector(containerSelector);
+      const slides = Array.from(container.querySelectorAll("img"));
+
+      // Shuffle slides
+      for (let i = slides.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [slides[i], slides[j]] = [slides[j], slides[i]];
+      }
+
+      // Random slight rotation (no extra left-top offsets)
+      slides.forEach(img => {
+        img.style.transform = `rotate(${Math.random() * 6 - 3}deg)`;
+      });
+
       let index = 0;
+      slides.forEach(img => img.classList.remove("active"));
+      slides[index].classList.add("active");
+
       setInterval(() => {
         slides[index].classList.remove("active");
         index = (index + 1) % slides.length;
@@ -255,9 +284,28 @@
       }, interval);
     }
 
-  
-    startSlideshow(".slideshow.left", 4000);
-    startSlideshow(".slideshow.right", 5000);
+    startRandomSlideshow(".slideshow.left", 4000);
+    startRandomSlideshow(".slideshow.right", 5000);
+
+    function adjustImagePosition(img) {
+      const aspectRatio = img.naturalWidth / img.naturalHeight;
+      const containerRatio = img.parentElement.offsetWidth / img.parentElement.offsetHeight;
+
+      if(aspectRatio > containerRatio){
+        img.style.objectPosition = "center center";
+      } else {
+        img.style.objectPosition = "center top";
+      }
+    }
+
+    document.querySelectorAll(".slideshow img").forEach(img => {
+      img.onload = () => adjustImagePosition(img);
+      if(img.complete) adjustImagePosition(img);
+    });
+
+    window.addEventListener("resize", () => {
+      document.querySelectorAll(".slideshow img").forEach(adjustImagePosition);
+    });
   </script>
 </body>
 </html>
